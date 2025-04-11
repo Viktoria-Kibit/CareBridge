@@ -1,6 +1,5 @@
 import React from 'react';
 import PetStories from '../../components/PetStories/PetStories';  // імпортуемо компонент
-import React from "react";
 import AdCard from "../../components/AdCard/AdCard";
 import HeroSection from "../../components/HomePageComponents/HeroSection/HeroSection";
 import FeaturesSection from "../../components/HomePageComponents/FeaturesSection/FeaturesSection";
