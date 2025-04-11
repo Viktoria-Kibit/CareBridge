@@ -100,7 +100,31 @@ function  Search () {
             }
 
             {(secondChoice === 'shelter' || secondChoice === 'vet' || secondChoice === 'breed' || secondChoice === 'other') && 
-            <p>Налаштування закладів</p>}
+            
+            <div className="filter-menu">
+                <div className="filter_group">
+                    <label>Розташування (км):</label>
+                    <div className="range_inputs">
+                    <input type="number" placeholder="від"/>
+                    <span>–</span>
+                    <input type="number" placeholder="до"/>
+                    </div>
+                </div>
+
+                <div className="filter_group">
+                    <label>Рейтинг:</label>
+                    <select>
+                    <option>від нижчого до вищого</option>
+                    <option>від вищого до нижчого</option>
+                    </select>
+                </div>
+
+                <div className='button_div'>
+                    <button className="apply_btn">Застосувати фільтри</button>
+                </div>
+            </div>
+            
+            }
             </div>
         )}
         </div>
