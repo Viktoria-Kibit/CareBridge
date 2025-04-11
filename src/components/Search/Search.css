@@ -1,13 +1,15 @@
 .menu_container {
     display: flex;
+    position: absolute;
+    z-index: 9999;
     flex-direction: column;
-    align-items: start;
+    width: 20%;
     gap: 10px;
-    margin: 20px;
+    margin: 10px;
   }
   
   .clickable_image {
-    width: 100px;
+    width: 30px;
     height: auto;
     cursor: pointer;
     transition: transform 0.2s;
@@ -18,6 +20,7 @@
   }
   
   select {
+    cursor: pointer;
     padding: 8px;
     font-size: 16px;
     border-radius: 5px;
@@ -26,7 +29,65 @@
   .menu_box {
     margin-top: 15px;
     padding: 10px;
-    background-color: #f2f2f2;
-    border: 2px dashed #ccc;
+    background-color: white;
     border-radius: 5px;
+  }
+  .opt {
+    cursor: pointer;
+  }
+
+  .filter_menu {
+    background-color: white;
+    padding: 20px;
+    border: 2px solid gray;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 300px;
+  }
+  
+  .filter_menu h3 {
+    margin-top: 100px;
+    margin-bottom: 15px;
+  }
+  
+  .filter_group {
+    margin-bottom: 15px;
+  }
+  
+  .range_inputs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .range_inputs input {
+    background-color: rgb(236, 236, 236);
+    width: 50%;
+    padding: 6px;
+  }
+  
+  select {
+    width: 100%;
+    padding: 6px;
+  }
+  
+  .apply_btn {
+    margin: auto;
+    padding: 8px 16px;
+    background-color: silver;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+  }
+  
+  .apply_btn:hover {
+    background-color: rgb(93, 180, 212);
+    transform: scale(1.1);
+  }
+  .button_div {
+    display: flex;
+    justify-content: center;  
+    align-items: center;
   }

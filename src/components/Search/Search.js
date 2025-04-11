@@ -34,7 +34,7 @@ function  Search () {
 
         {showAnimalOrShelterDropdown && (
             <select onChange={WhenAnimalOrShelterSelected} value={firstChoice}>
-            <option value="">Оберіть категорію</option>
+            <option classNamevalue="opt">Оберіть категорію</option>
             <option value="animals">Тварини</option>
             <option value="shelters">Притулки</option>
             </select>
@@ -42,7 +42,7 @@ function  Search () {
 
         {firstChoice === 'animals' && (
             <select onChange={WhenSelectedAnimalOrShelterType} value={secondChoice}>
-            <option value="">Оберіть тип</option>
+            <option value="">Оберіть вид</option>
             <option value="cats">Коти</option>
             <option value="dogs">Собаки</option>
             <option value="parrots">Папуги</option>
@@ -64,7 +64,40 @@ function  Search () {
         {secondChoice && (
             <div className="menu_box">
             {(secondChoice === 'cats' || secondChoice === 'dogs' || secondChoice === 'parrots' || secondChoice === 'hamsters' || secondChoice === 'other animal') && 
-            <p>Налаштування тварин</p>}
+            
+            <div className="filter-menu">
+                <div className="filter_group">
+                    <label>Розташування (км):</label>
+                    <div className="range_inputs">
+                    <input type="number" placeholder="від"/>
+                    <span>–</span>
+                    <input type="number" placeholder="до"/>
+                    </div>
+                </div>
+
+                <div className="filter_group">
+                    <label>Вік:</label>
+                    <select>
+                    <option>від молодших до старших</option>
+                    <option>від старших до молодших</option>
+                    </select>
+                </div>
+
+                <div className="filter_group">
+                    <label>Стан здоров’я:</label>
+                    <select >
+                    <option>Здоровий</option>
+                    <option>Незначні хвороби/травми</option>
+                    <option>Значні хвороби/травми</option>
+                    </select>
+                </div>
+
+                <div className='button_div'>
+                    <button className="apply_btn">Застосувати фільтри</button>
+                </div>
+            </div>
+            
+            }
 
             {(secondChoice === 'shelter' || secondChoice === 'vet' || secondChoice === 'breed' || secondChoice === 'other') && 
             <p>Налаштування закладів</p>}
