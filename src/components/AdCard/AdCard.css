@@ -1,0 +1,83 @@
+.card {
+    width: 100%;
+    max-width: 150px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(216, 216, 216);
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.2s ease;
+  }
+.card:hover {
+    transform: scale(1.02);
+  }
+
+.golden_card {
+    width: 100%;
+    max-width: 150px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(255, 221, 50);
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(73, 73, 73, 0.1);
+    text-align: center;
+    transition: transform 0.2s ease;
+  }
+.card:hover {
+    transform: scale(1.02);
+}
+.golden_card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px 5px rgb(251, 195, 82);
+}
+  .photo {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  .sex {
+    width: 40%;
+    height: 40%;
+  }
+  .category {
+    width: 40%;
+    height: 40%;
+  }
+  .pet_header {
+    height: auto;
+    padding: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items:baseline;
+  }
+  .pet_name {
+    font-family: 'Courier New', Courier, monospace;
+  }
+  .icons {
+    display: flex;
+  }
+  .info {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .age {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: small;
+  }
+  .view {
+    width: auto;
+    background-color: #bcbcbc;
+    border: none;
+    padding: 5px 10px;
+    font-size: auto;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: transform 0.2s ease;
+  }
+  .view:hover {
+    transform: scale(1.02);
+    background-color: #a8a6a6;
+  }
