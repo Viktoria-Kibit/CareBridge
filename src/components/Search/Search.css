@@ -1,0 +1,32 @@
+.menu_container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+    margin: 20px;
+  }
+  
+  .clickable_image {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .clickable_image:hover {
+    transform: scale(1.05);
+  }
+  
+  select {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+  .menu_box {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+  }
