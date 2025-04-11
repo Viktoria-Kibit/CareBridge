@@ -1,3 +1,5 @@
+import React from 'react';
+import PetStories from '../../components/PetStories/PetStories';  // імпортуемо компонент
 import React from "react";
 import AdCard from "../../components/AdCard/AdCard";
 import HeroSection from "../../components/HomePageComponents/HeroSection/HeroSection";
@@ -6,9 +8,11 @@ import FeaturesSection from "../../components/HomePageComponents/FeaturesSection
 const Home = () => {
   return (
     <div>
+
+      <h1>Welcome to the Home page</h1>
+      <PetStories />  {/* Вставляемо компонент PetStories */}
       <HeroSection />
       <FeaturesSection />
-      {/*<AdCard name="Боні" sex="female" age={3} rate={5} visiting={20} /> {}*/}
       <div className="min-h-screen bg-gradient-to-br from-teal-200 to-blue-300 flex items-center justify-center">
         <div className="bg-white p-10 rounded-2xl shadow-xl text-center">
           <h1 className="text-3xl font-bold text-teal-600 mb-4">
@@ -19,6 +23,7 @@ const Home = () => {
           </p>
         </div>
       </div>
+
     </div>
   );
 };
