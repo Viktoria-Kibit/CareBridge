@@ -27,21 +27,26 @@ import styles from './PetStories.module.css';
 // };
 const PetStoryCard = ({ title, images, story, authorAvatar, date }) => {
     return (
-      <div className={styles.card}>
-        <div className={styles.leftImages}>
-          {images.map((img, i) => (
-            <img key={i} src={img} alt="pet" className={styles.petImage} />
-          ))}
-        </div>
-        <div className={styles.rightContent}>
-          <h2 className={styles.storyTitle}>{title}</h2>
-          <p className={styles.storyText}>{story}</p>
-          <div className={styles.authorInfo}>
-            <img src={authorAvatar} alt="author" className={styles.authorAvatar} />
-            <span className={styles.date}>{date}</span>
-          </div>
-        </div>
+     
+    <div className={styles.card}>
+    <h2 className={styles.storyTitle}>{title}</h2>
+    
+    <div className={styles.cardContent}>
+      <div className={styles.leftImages}>
+        {images.map((img, i) => (
+          <img key={i} src={img} alt="pet" className={styles.petImage} />
+        ))}
       </div>
+  
+      <div className={styles.rightContent}>
+        <p className={styles.storyText}>{story}</p>
+        <div className={styles.authorInfo}>
+          <img src={authorAvatar} alt="author" className={styles.authorAvatar} />
+          <span className={styles.date}>{date}</span>
+        </div>
+         </div>
+     </div>
+     </div>
     );
   };
 
