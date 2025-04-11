@@ -36,7 +36,6 @@ export default function FeaturesSection() {
         Їм час знайти дім
       </h3>
 
-      {/* Центруємо блоки та зменшуємо відстань між ними */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-6 justify-items-center">
         {features.map((f, i) => (
           <div
@@ -49,7 +48,17 @@ export default function FeaturesSection() {
               alt={f.title}
               className="w-40 h-40 rounded-full object-cover shadow-lg mb-4 transform group-hover:scale-110 transition duration-300"
             />
-            <h4 className="text-xl font-medium group-hover:underline transition duration-300">
+            <h4
+              className="text-xl font-medium group-hover:underline transition duration-300"
+              style={
+                f.title === "Pet stories"
+                  ? {
+                      fontFamily: "Kirang Haerang, sans-serif",
+                      fontSize: "2rem",
+                    }
+                  : {}
+              }
+            >
               {f.title}
             </h4>
             <p className="text-sm mt-2">{f.text}</p>

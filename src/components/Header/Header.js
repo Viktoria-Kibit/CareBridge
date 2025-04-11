@@ -60,6 +60,12 @@ export default function Header() {
           >
             <User className="w-7 h-7 cursor-pointer" />
           </Link>
+          <span
+            className="font-[Caveat] text-3xl font-bold"
+            style={{ fontFamily: "Kirang Haerang, sans-serif" }}
+          >
+            Pet stories
+          </span>
         </div>
       </div>
     </header>
