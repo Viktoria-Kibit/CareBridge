@@ -1,11 +1,13 @@
 import React from "react";
 import AdCard from "../../components/AdCard/AdCard";
 import HeroSection from "../../components/HomePageComponents/HeroSection/HeroSection";
+import FeaturesSection from "../../components/HomePageComponents/FeaturesSection/FeaturesSection";
 
 const Home = () => {
   return (
     <div>
       <HeroSection />
+      <FeaturesSection />
       {/*<AdCard name="Боні" sex="female" age={3} rate={5} visiting={20} /> {}*/}
       <div className="min-h-screen bg-gradient-to-br from-teal-200 to-blue-300 flex items-center justify-center">
         <div className="bg-white p-10 rounded-2xl shadow-xl text-center">
