@@ -5,6 +5,7 @@ import HeroSection from "../../components/HomePageComponents/HeroSection/HeroSec
 import FeaturesSection from "../../components/HomePageComponents/FeaturesSection/FeaturesSection";
 import AboutPlatform from "../../components/HomePageComponents/AboutPlatform/AboutPlatform";
 import NewsSection from "../../components/HomePageComponents/NewsSection/NewsSection";
+import FormSect from "../../components/AddAdForm/AddAdForm";
 
 const Home = () => {
   return (
