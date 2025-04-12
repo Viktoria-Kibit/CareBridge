@@ -13,20 +13,20 @@ function AdCard({ name, sex, age, visiting, rate }) {
     >
       <div>
         <img src={photo} alt="pet" className="w-full h-auto rounded-md" />
-        <div className="pt-2 flex justify-between items-baseline">
+        <div className="pt-2 flex justify-start items-center">
           <p className="font-mono text-lg">{name}</p>
-          <p className="flex">
-            {sex === "female" ? (
-              <img src={fem} alt="female" className="w-6 h-6" />
-            ) : (
-              <img src={male} alt="male" className="w-6 h-6" />
-            )}
-            <img src={cat} alt="cat" className="w-6 h-6 ml-1" />
-          </p>
         </div>
       </div>
-      <div className="mt-2">
-        <p className="font-mono text-sm">{age} роки</p>
+      <div className="mt-2 flex justify-start items-center">
+        <p className="font-mono text-sm mr-2">{age} роки</p>
+        <p className="flex">
+          {sex === "female" ? (
+            <img src={fem} alt="female" className="w-6 h-6" />
+          ) : (
+            <img src={male} alt="male" className="w-6 h-6" />
+          )}
+          <img src={cat} alt="cat" className="w-6 h-6 ml-1" />
+        </p>
       </div>
       <button className="mt-4 bg-gray-400 hover:bg-gray-500 text-white py-1 px-3 rounded-md transition-all duration-200">
         Переглянути

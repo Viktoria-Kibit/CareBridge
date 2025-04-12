@@ -6,12 +6,12 @@ import AdCard from "../../components/AdCard/AdCard";
 const AdventsPage = () => {
   // Список карточок від притулків з використанням компонента AdCard
   const shelterCards = [
-    <AdCard key={1} name="Animal 1" sex="female" age={2} rate={5} />,
-    <AdCard key={2} name="Animal 2" sex="male" age={3} rate={4} />,
-    <AdCard key={3} name="Animal 3" sex="female" age={1} rate={3} />,
-    <AdCard key={4} name="Animal 4" sex="male" age={4} rate={2} />,
-    <AdCard key={5} name="Animal 5" sex="female" age={5} rate={5} />,
-    <AdCard key={6} name="Animal 6" sex="male" age={6} rate={4} />,
+    <AdCard key={1} name="Мурка" sex="female" age={2} rate={5} />,
+    <AdCard key={2} name="Боні" sex="male" age={3} rate={4} />,
+    <AdCard key={3} name="Рекс" sex="female" age={1} rate={3} />,
+    <AdCard key={4} name="Айва" sex="male" age={4} rate={2} />,
+    <AdCard key={5} name="Бекі" sex="female" age={5} rate={5} />,
+    <AdCard key={6} name="Animal" sex="male" age={6} rate={4} />,
   ];
 
   // Список карточок від волонтерів з використанням компонента AdCard
