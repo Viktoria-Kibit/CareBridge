@@ -1,4 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
+import Register from '../../components/RegisterForm/Register';
+import RegisterVolonter from '../../components/RegisterForm/RegisterVolonter';
+import RegisterInstitution from '../../components/RegisterForm/RegisterInstitution';
+
+
+/*
 import PetStories from '../../components/PetStories/PetStories';  // імпортуемо компонент
 import AdCard from "../../components/AdCard/AdCard";
 import HeroSection from "../../components/HomePageComponents/HeroSection/HeroSection";
@@ -9,7 +15,7 @@ const Home = () => {
     <div>
 
       <h1>Welcome to the Home page</h1>
-      <PetStories />  {/* Вставляемо компонент PetStories */}
+      <PetStories />  {/* Вставляемо компонент PetStories /}
       <HeroSection />
       <FeaturesSection />
       <div className="min-h-screen bg-gradient-to-br from-teal-200 to-blue-300 flex items-center justify-center">
@@ -26,5 +32,36 @@ const Home = () => {
     </div>
   );
 };
+*/
+const Home = () => {
+  const [selectedRole, setSelectedRole] = useState(null);
+
+  const handleSelect = (role) => {
+    setSelectedRole(role);
+    console.log('Вибрано:', role);
+  };
+  const handleClose = () => {
+    setSelectedRole(null);
+  };
+  return (
+    <div>
+      {/* Если роль не выбрана — показываем окно регистрации */}
+      {!selectedRole && (
+        <Register onSelect={handleSelect} onClose={handleClose} />
+      )}
+
+      {selectedRole === 'volunteer' && (
+        <RegisterVolonter onClose={handleClose} />
+      )}
+
+      {selectedRole === 'institute' && (
+        <RegisterInstitution onClose={handleClose} />
+      )}
+    </div>
+  );
+};
+
+
+
 
 export default Home;
