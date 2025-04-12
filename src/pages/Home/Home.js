@@ -4,7 +4,7 @@ import React, {useState} from 'react';
 import Register from '../../components/RegisterForm/Register';
 import RegisterVolonter from '../../components/RegisterForm/RegisterVolonter';
 import RegisterInstitution from '../../components/RegisterForm/RegisterInstitution';
-
+import LoginForm from "../../components/LoginForm/LoginForm";
 
 
 import PetStories from '../../components/PetStories/PetStories';  // імпортуемо компонент
@@ -62,7 +62,7 @@ const shelterData = {
   donations: 3600
 }
 
-const Home = () => {
+const Home = () => { 
   return (
     <div>
 
@@ -109,5 +109,20 @@ const Home = () => {
 
 
 */
+// const Home = () => {
+//   return (
+//     <div>
+//       <h1>Welcome to the Home page</h1>
 
+//       {/* Вставляем компонент LoginForm */}
+//       <LoginForm />
+
+//       <HeroSection />
+//       <FeaturesSection />
+//       <AboutPlatform />
+//       <NewsSection />
+//     </div>
+//   );
+// };
 export default Home;
+

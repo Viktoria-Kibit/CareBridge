@@ -1,6 +1,7 @@
     import React, { useState } from 'react';
     import styles from './Register.module.css';
-
+    import googleLogo from '../../assets/GoogleLogo.png'
+    import facebookLogo from '../../assets/FacebookLogo.png'
 
 
     function VolunteerLogin({ onClose }) {
