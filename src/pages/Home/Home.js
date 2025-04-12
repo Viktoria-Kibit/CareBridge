@@ -1,5 +1,13 @@
-import React from "react";
 
+
+import React, {useState} from 'react';
+import Register from '../../components/RegisterForm/Register';
+import RegisterVolonter from '../../components/RegisterForm/RegisterVolonter';
+import RegisterInstitution from '../../components/RegisterForm/RegisterInstitution';
+
+
+
+import PetStories from '../../components/PetStories/PetStories';  // імпортуемо компонент
 import AdCard from "../../components/AdCard/AdCard";
 import HeroSection from "../../components/HomePageComponents/HeroSection/HeroSection";
 import FeaturesSection from "../../components/HomePageComponents/FeaturesSection/FeaturesSection";
@@ -9,6 +17,7 @@ import FormSect from "../../components/AddAdForm/AddAdForm";
 import Carousel from "../../components/CardCarousel/CardCarousel";
 import VolunteerProfile from "../VolunteerProfile/VolunteerProfile";
 import ShelterProfile from "../ShelterProfile/ShelterProfile";
+import AddRequestForm from '../../components/AddRequestForm/AddRequestForm';
 
 AdCard({})
 const cards = [
@@ -57,6 +66,9 @@ const shelterData = {
 const Home = () => {
   return (
     <div>
+
+      <h1>Welcome to the Home page</h1>
+     {/*<PetStories />*/}   {/* Вставляемо компонент PetStories*/}
       <HeroSection />
       <FeaturesSection />
       <AboutPlatform />
@@ -64,8 +76,40 @@ const Home = () => {
       {/* <Carousel cards={cards}/> */}
       {/* <VolunteerProfile volunteer={volunteerData}/> */}
       {/* <ShelterProfile shelter={shelterData} /> */}
+      {/* <AddRequestForm /> */}
     </div>
   );
 };
+/*
+const Home = () => {
+  const [selectedRole, setSelectedRole] = useState(null);
+
+  const handleSelect = (role) => {
+    setSelectedRole(role);
+    console.log('Вибрано:', role);
+  };
+  const handleClose = () => {
+    setSelectedRole(null);
+  };
+  return (
+    <div>
+     
+      {!selectedRole && (
+        <Register onSelect={handleSelect} onClose={handleClose} />
+      )}
+
+      {selectedRole === 'volunteer' && (
+        <RegisterVolonter onClose={handleClose} />
+      )}
+
+      {selectedRole === 'institute' && (
+        <RegisterInstitution onClose={handleClose} />
+      )}
+    </div>
+  );
+};
+
+
+*/
 
 export default Home;
