@@ -49,6 +49,9 @@
     cursor: pointer;
   }
   
-  .animal-form button:hover {
+  .accept:hover {
     background-color: #008e6c;
+  }
+  .reject:hover {
+    background-color: #460d0d;
   }

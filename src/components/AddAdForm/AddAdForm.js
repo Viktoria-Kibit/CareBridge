@@ -11,7 +11,7 @@ function AddAdForm({ old_name, old_age, old_health, old_category, old_descriptio
         description: ''
       });
       if(isEditMode){
-        formData.name = old_age;
+        formData.name = old_name;
         formData.age = old_age;
         formData.health = old_health;
         formData.category = old_category;
