@@ -6,6 +6,7 @@ import FeaturesSection from "../../components/HomePageComponents/FeaturesSection
 import AboutPlatform from "../../components/HomePageComponents/AboutPlatform/AboutPlatform";
 import NewsSection from "../../components/HomePageComponents/NewsSection/NewsSection";
 import FormSect from "../../components/AddAdForm/AddAdForm";
+import Carousel from "../../components/CardCarousel/CardCarousel";
 
 const Home = () => {
   return (

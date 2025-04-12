@@ -1,0 +1,36 @@
+.carousel-wrapper {
+    position: relative;
+    width: 300px;
+    margin: auto;
+  }
+  
+  .carousel-container {
+    display: flex;
+  }
+  
+  .carousel-card {
+    opacity: 0;
+    display: none;
+  }
+  
+  .carousel-card.active {
+    display: block;
+    opacity: 1;
+  }
+  
+  .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgb(228, 228, 228);
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .nav-button.left {
+    left: 0;
+  }
+  
+  .nav-button.right {
+    right: 0;
+  }
