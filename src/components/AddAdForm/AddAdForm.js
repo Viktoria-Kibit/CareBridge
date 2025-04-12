@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "./AddAdForm.css";
-function AddAdForm() {
+function AddAdForm({ old_name, old_age, old_health, old_category, old_description}) {
+  const isEditMode = !!old_name;
     const [formData, setFormData] = useState({
         photo: null,
         name: '',
@@ -9,6 +10,13 @@ function AddAdForm() {
         category: "other",
         description: ''
       });
+      if(isEditMode){
+        formData.name = old_age;
+        formData.age = old_age;
+        formData.health = old_health;
+        formData.category = old_category;
+        formData.description = old_description;
+      }
     
       const handleChange = (e) => {
         const { name, value, type, files } = e.target;
@@ -31,7 +39,7 @@ function AddAdForm() {
     
       return (
         <form className="animal-form" onSubmit={handleSubmit}>
-          <h2><b>Додати оголошення</b></h2>
+          <h2><b>{isEditMode?"Редагувати оголошення":"Додати оголошення"}</b></h2>
     
           <label>Фото тварини:</label>
           <input type="file" name="photo" accept="image/*" onChange={handleChange} />
@@ -61,7 +69,8 @@ function AddAdForm() {
           <label>Опис:</label>
           <textarea name="description" value={formData.description} onChange={handleChange} rows="4" />
     
-          <button type="submit">Додати оголошення</button>
+          <button type="submit" className='accept'>{isEditMode ? 'Зберегти зміни' : 'Додати оголошення'}</button>
+          {isEditMode?<button className='reject'>Відхилити зміни</button>:<></>}
         </form>
       );
 }

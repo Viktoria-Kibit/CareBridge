@@ -28,10 +28,20 @@
     font-size: 14px;
   }
   
-  .animal-form button {
+  .accept {
     margin-top: 10px;
     padding: 10px;
     background-color: #00a67e;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .reject {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #7a1d1d;
     color: white;
     font-weight: bold;
     border: none;
