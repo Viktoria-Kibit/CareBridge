@@ -4,24 +4,64 @@ import FoundAnimalBanner from "../../components/AdvertsPageComponents/FoundAnima
 import AdCard from "../../components/AdCard/AdCard";
 
 const AdventsPage = () => {
-  // Список карточок від притулків з використанням компонента AdCard
+  // Список карточок від притулків
   const shelterCards = [
-    <AdCard key={1} name="Мурка" sex="female" age={2} rate={5} />,
-    <AdCard key={2} name="Боні" sex="male" age={3} rate={4} />,
-    <AdCard key={3} name="Рекс" sex="female" age={1} rate={3} />,
-    <AdCard key={4} name="Айва" sex="male" age={4} rate={2} />,
-    <AdCard key={5} name="Бекі" sex="female" age={5} rate={5} />,
-    <AdCard key={6} name="Animal" sex="male" age={6} rate={4} />,
+    <AdCard
+      key={1}
+      type="shelter"
+      name="Мурка"
+      sex="female"
+      age={2}
+      rate={5}
+    />,
+    <AdCard key={2} type="shelter" name="Боні" sex="male" age={3} rate={4} />,
+    <AdCard key={3} type="shelter" name="Рекс" sex="female" age={1} rate={3} />,
+    <AdCard key={4} type="shelter" name="Айва" sex="male" age={4} rate={2} />,
+    <AdCard key={5} type="shelter" name="Бекі" sex="female" age={5} rate={5} />,
+    <AdCard key={6} type="shelter" name="Animal" sex="male" age={6} rate={4} />,
+    <AdCard
+      key={7}
+      type="shelter"
+      name="Мурка"
+      sex="female"
+      age={2}
+      rate={5}
+    />,
+    <AdCard key={8} type="shelter" name="Боні" sex="male" age={3} rate={4} />,
+    <AdCard key={9} type="shelter" name="Рекс" sex="female" age={1} rate={3} />,
+    <AdCard key={10} type="shelter" name="Айва" sex="male" age={4} rate={2} />,
+    <AdCard
+      key={11}
+      type="shelter"
+      name="Бекі"
+      sex="female"
+      age={5}
+      rate={5}
+    />,
+    <AdCard
+      key={12}
+      type="shelter"
+      name="Animal"
+      sex="male"
+      age={6}
+      rate={4}
+    />,
   ];
 
-  // Список карточок від волонтерів з використанням компонента AdCard
+  // Список карточок від волонтерів
   const volunteerCards = [
-    <AdCard key={1} name="FAnimal 1" sex="female" age={1} rate={4} />,
-    <AdCard key={2} name="FAnimal 2" sex="male" age={2} rate={3} />,
-    <AdCard key={3} name="FAnimal 3" sex="female" age={3} rate={2} />,
-    <AdCard key={4} name="FAnimal 4" sex="male" age={4} rate={5} />,
-    <AdCard key={5} name="FAnimal 5" sex="female" age={5} rate={5} />,
-    <AdCard key={6} name="FAnimal 6" sex="male" age={6} rate={4} />,
+    <AdCard key={1} name="FAnimal 1" sex="female" type={""} city={"Kyiv"} />,
+    <AdCard key={2} name="FAnimal 2" sex="male" type={""} city={"Kyiv"} />,
+    <AdCard key={3} name="FAnimal 3" sex="female" type={""} city={"Kyiv"} />,
+    <AdCard key={4} name="FAnimal 4" sex="male" type={""} city={"Kyiv"} />,
+    <AdCard key={5} name="FAnimal 5" sex="female" type={""} city={"Kyiv"} />,
+    <AdCard key={6} name="FAnimal 6" sex="male" type={""} city={"Kyiv"} />,
+    <AdCard key={7} name="FAnimal 1" sex="female" type={""} city={"Kyiv"} />,
+    <AdCard key={8} name="FAnimal 2" sex="male" type={""} city={"Kyiv"} />,
+    <AdCard key={9} name="FAnimal 3" sex="female" type={""} city={"Kyiv"} />,
+    <AdCard key={10} name="FAnimal 4" sex="male" type={""} city={"Kyiv"} />,
+    <AdCard key={11} name="FAnimal 5" sex="female" type={""} city={"Kyiv"} />,
+    <AdCard key={12} name="FAnimal 6" sex="male" type={""} city={"Kyiv"} />,
   ];
 
   return (
