@@ -18,6 +18,7 @@ import Carousel from "../../components/CardCarousel/CardCarousel";
 import VolunteerProfile from "../VolunteerProfile/VolunteerProfile";
 import ShelterProfile from "../ShelterProfile/ShelterProfile";
 import AddRequestForm from '../../components/AddRequestForm/AddRequestForm';
+import ShelterAdDetails from '../ShelterAdDetails/ShelterAdDetails';
 
 AdCard({})
 const cards = [
@@ -62,6 +63,9 @@ const shelterData = {
   ads: cards,
   donations: 3600
 }
+const card = <AdCard name={"name1"} sex={"female"}  age={1} visiting={20} rate={3.1} />;
+const animal = { ...card.props, health: "average", breed: "som breed", description: "some desc"};
+
 
 const Home = () => {
   return (
@@ -77,6 +81,7 @@ const Home = () => {
       {/* <VolunteerProfile volunteer={volunteerData}/> */}
       {/* <ShelterProfile shelter={shelterData} /> */}
       {/* <AddRequestForm /> */}
+      {/* <ShelterAdDetails animal={animal} shelter={shelterData}/> */}
     </div>
   );
 };

@@ -74,11 +74,11 @@
             <label className={styles.line}></label>
         </div>
         <button className={styles.buttonContainer} onClick={() => alert('Google login')}>
-            <img src={googleLogo} alt="Google" className={styles.logo} />
+            {/* <img src={googleLogo} alt="Google" className={styles.logo} /> */}
            <span>Продовжити з Гугл</span> 
         </button>
         <button className={styles.buttonContainer} onClick={() => alert('Facebook login')}>
-            <img src={facebookLogo} alt="Google" className={styles.logo} />
+            {/* <img src={facebookLogo} alt="Google" className={styles.logo} /> */}
             <span>Продовжити з Фейсбук</span>
         </button>
         </div>
