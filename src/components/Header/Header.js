@@ -2,6 +2,14 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Search, User } from "lucide-react";
 import SearchDropdown from "../Search/SearchDropdown";
+import UserMenu from "../UserMenu/UserMenu";
+const user = {
+  name: "Віка",
+  role: "volunteer", // або 'shelter'
+  logout: () => {
+    /* твоя функція виходу */
+  },
+};
 
 export default function Header() {
   const [showSearch, setShowSearch] = useState(false);
@@ -13,10 +21,15 @@ export default function Header() {
   return (
     <header className="bg-white shadow-md py-6 px-10 flex flex-col gap-4 relative">
       <div className="flex justify-between items-center text-xl">
-        <div className="text-3xl font-bold">CareBridge</div>
+        <div
+          className="text-5xl font-bold"
+          style={{ fontFamily: "Kirang Haerang, sans-serif" }}
+        >
+          <Link to={"/"}>CareBridge</Link>
+        </div>
 
         <nav className="flex space-x-8 font-medium">
-          {["Головна", "Про платформу", "Оголошення", "Допомога", "Блог"].map(
+          {["Головна", "Про платформу", "Оголошення", "Донати", "Блог"].map(
             (text, i) => {
               const routes = [
                 "/",
@@ -54,12 +67,10 @@ export default function Header() {
             )}
           </div>
 
-          <Link
-            to="/profile"
-            className="hover:scale-110 transition-transform duration-200"
-          >
-            <User className="w-7 h-7 cursor-pointer" />
-          </Link>
+          {/*<User className="w-7 h-7 cursor-pointer" />*/}
+
+          <UserMenu user={user} />
+
           <span
             className="font-[Caveat] text-3xl font-bold"
             style={{ fontFamily: "Kirang Haerang, sans-serif" }}
