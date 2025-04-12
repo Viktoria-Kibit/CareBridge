@@ -1,8 +1,5 @@
     import React, { useState } from 'react';
     import styles from './Register.module.css';
-    import googleLogo from '../../assets/GoogleLogo.png';
-    import facebookLogo from '../../assets/FacebookLogo.png';
-
 
 
 
@@ -70,17 +67,12 @@
         <p>
             Уже маєте обліковий запис? <button onClick={() => alert('Переход до реєстрації')}> Увійти</button>
         </p>
-
-        {/* Разделитель */}
-        
+ 
         <div className={styles.divider}>
             <label className={styles.line}></label>
             <label className={styles.orText}>Або</label>
             <label className={styles.line}></label>
         </div>
-        
-
-        {/* Кнопки соцсетей */}
         <button className={styles.buttonContainer} onClick={() => alert('Google login')}>
             <img src={googleLogo} alt="Google" className={styles.logo} />
            <span>Продовжити з Гугл</span> 
