@@ -38,9 +38,11 @@
   }
   
   .nav-button.left {
-    left:-50px;
+    background-color: rgba(240, 248, 255, 0);
+    left:-60px;
   }
   
   .nav-button.right {
-    right: -50px;
+    background-color: rgba(240, 248, 255, 0);
+    right: -70px;
   }

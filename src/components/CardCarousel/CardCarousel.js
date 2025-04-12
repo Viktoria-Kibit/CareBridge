@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './CardCarousel.css';
+import left_icon from '../../assets/arrow-left.png'
+import right_icon from '../../assets/arrow-right.png'
 
 const CardCarousel = ({ cards }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -16,7 +18,9 @@ const CardCarousel = ({ cards }) => {
 
   return (
     <div className="carousel-wrapper">
-      <button className="nav-button left" onClick={prevSlide}>вліво</button>
+      <button className="nav-button left" onClick={prevSlide}>
+        <img src={left_icon} alt='Вліво' />
+      </button>
 
       <div className="carousel-container">
       <div
@@ -33,7 +37,9 @@ const CardCarousel = ({ cards }) => {
         ))}
       </div>
       </div>
-      <button className="nav-button right" onClick={nextSlide}>вправа</button>
+      <button className="nav-button right" onClick={nextSlide}>
+        <img src={right_icon} alt='Вправо'></img>
+      </button>
     </div>
   );
 };
