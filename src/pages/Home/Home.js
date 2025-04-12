@@ -17,6 +17,7 @@ import FormSect from "../../components/AddAdForm/AddAdForm";
 import Carousel from "../../components/CardCarousel/CardCarousel";
 import VolunteerProfile from "../VolunteerProfile/VolunteerProfile";
 import ShelterProfile from "../ShelterProfile/ShelterProfile";
+import AddRequestForm from '../../components/AddRequestForm/AddRequestForm';
 
 AdCard({})
 const cards = [
@@ -75,6 +76,7 @@ const Home = () => {
       {/* <Carousel cards={cards}/> */}
       {/* <VolunteerProfile volunteer={volunteerData}/> */}
       {/* <ShelterProfile shelter={shelterData} /> */}
+      {/* <AddRequestForm /> */}
     </div>
   );
 };
