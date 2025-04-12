@@ -1,0 +1,48 @@
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  .carousel-container {
+    width: 100%;
+    overflow: hidden;
+  }
+  .carousel-track {
+    display: flex;
+    transition: transform 0.4s ease;
+    width: 90%;
+    gap: 30px;
+  }
+  
+  .carousel-card {
+    flex: 0 0 20%;
+    box-sizing: border-box;
+    padding: 10px;
+  }
+  
+  .carousel-card.active {
+    display: block;
+    opacity: 1;
+  }
+  
+  .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgb(228, 228, 228);
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .nav-button.left {
+    background-color: rgba(240, 248, 255, 0);
+    left:-60px;
+  }
+  
+  .nav-button.right {
+    background-color: rgba(240, 248, 255, 0);
+    right: -70px;
+  }
