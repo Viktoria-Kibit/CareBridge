@@ -1,12 +1,4 @@
-import React, { useState } from "react";
-import styles from "./Register.module.css";
-import { FaGoogle, FaFacebook } from "react-icons/fa";
 
-function VolunteerLogin({ onClose }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [login, setLogin] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
 
   const handleSubmit = () => {
     console.log("Email:", email);
