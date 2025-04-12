@@ -31,13 +31,7 @@ export default function Header() {
         <nav className="flex space-x-8 font-medium">
           {["Головна", "Про платформу", "Оголошення", "Донати", "Блог"].map(
             (text, i) => {
-              const routes = [
-                "/",
-                "/about",
-                "/announcements",
-                "/help",
-                "/blog",
-              ];
+              const routes = ["/", "/about", "/adverts", "/help", "/blog"];
               return (
                 <Link
                   key={i}

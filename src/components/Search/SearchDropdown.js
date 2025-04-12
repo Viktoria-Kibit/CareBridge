@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function SearchDropdown({ onClose }) {
   const [firstChoice, setFirstChoice] = useState("");
@@ -155,7 +156,7 @@ export default function SearchDropdown({ onClose }) {
               onClick={handleApplyFilters}
               className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none transition duration-300 ease-in-out transform hover:scale-105"
             >
-              Застосувати
+              <Link to={"/adverts"}>Застосувати</Link>
             </button>
           </div>
         </div>
