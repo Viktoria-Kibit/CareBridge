@@ -40,7 +40,7 @@ const Home = () => {
       <AboutPlatform />
       <NewsSection />
       {/* <Carousel cards={cards}/> */}
-      <VolunteerProfile volunteer={volunteerData}/>
+      {/* <VolunteerProfile volunteer={volunteerData}/> */}
     </div>
   );
 };
