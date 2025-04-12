@@ -2,6 +2,14 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Search, User } from "lucide-react";
 import SearchDropdown from "../Search/SearchDropdown";
+import UserMenu from "../UserMenu/UserMenu";
+const user = {
+  name: "Віка",
+  role: "volunteer", // або 'shelter'
+  logout: () => {
+    /* твоя функція виходу */
+  },
+};
 
 export default function Header() {
   const [showSearch, setShowSearch] = useState(false);
@@ -59,12 +67,10 @@ export default function Header() {
             )}
           </div>
 
-          <Link
-            to="/profile"
-            className="hover:scale-110 transition-transform duration-200"
-          >
-            <User className="w-7 h-7 cursor-pointer" />
-          </Link>
+          {/*<User className="w-7 h-7 cursor-pointer" />*/}
+
+          <UserMenu user={user} />
+
           <span
             className="font-[Caveat] text-3xl font-bold"
             style={{ fontFamily: "Kirang Haerang, sans-serif" }}
