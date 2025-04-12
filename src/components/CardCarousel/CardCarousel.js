@@ -3,13 +3,15 @@ import './CardCarousel.css';
 
 const CardCarousel = ({ cards }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const visibleCards = 5;
+  const maxIndex = cards.length - visibleCards;
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % cards.length);
+    setCurrentIndex((prev) => Math.min(prev + 1, maxIndex));
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + cards.length) % cards.length);
+    setCurrentIndex((prev) => Math.max(prev - 1, 0));
   };
 
   return (
@@ -17,6 +19,10 @@ const CardCarousel = ({ cards }) => {
       <button className="nav-button left" onClick={prevSlide}>вліво</button>
 
       <div className="carousel-container">
+      <div
+          className="carousel-track"
+          style={{ transform: `translateX(-${currentIndex * (100 / visibleCards)}%)` }}
+        >
         {cards.map((card, index) => (
           <div
             key={index}
@@ -26,7 +32,7 @@ const CardCarousel = ({ cards }) => {
           </div>
         ))}
       </div>
-
+      </div>
       <button className="nav-button right" onClick={nextSlide}>вправа</button>
     </div>
   );

@@ -1,16 +1,25 @@
 .carousel-wrapper {
     position: relative;
-    width: 300px;
+    width: 100%;
+    max-width: 900px;
     margin: auto;
   }
   
   .carousel-container {
+    width: 100%;
+    overflow: hidden;
+  }
+  .carousel-track {
     display: flex;
+    transition: transform 0.4s ease;
+    width: 90%;
+    gap: 30px;
   }
   
   .carousel-card {
-    opacity: 0;
-    display: none;
+    flex: 0 0 20%;
+    box-sizing: border-box;
+    padding: 10px;
   }
   
   .carousel-card.active {
@@ -25,12 +34,13 @@
     background-color: rgb(228, 228, 228);
     padding: 10px;
     cursor: pointer;
+    z-index: 10;
   }
   
   .nav-button.left {
-    left: 0;
+    left:-50px;
   }
   
   .nav-button.right {
-    right: 0;
+    right: -50px;
   }
