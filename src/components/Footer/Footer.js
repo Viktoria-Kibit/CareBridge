@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="flex justify-between items-center">
         {/* Логотип або текст */}
         <div
-          className="text-5xl font-bold"
+          className="text-5 xl font-bold"
           style={{ fontFamily: "Kirang Haerang, sans-serif" }}
         >
           CareBridge
