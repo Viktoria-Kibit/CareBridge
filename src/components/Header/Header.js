@@ -13,10 +13,15 @@ export default function Header() {
   return (
     <header className="bg-white shadow-md py-6 px-10 flex flex-col gap-4 relative">
       <div className="flex justify-between items-center text-xl">
-        <div className="text-3xl font-bold">CareBridge</div>
+        <div
+          className="text-5xl font-bold"
+          style={{ fontFamily: "Kirang Haerang, sans-serif" }}
+        >
+          <Link to={"/"}>CareBridge</Link>
+        </div>
 
         <nav className="flex space-x-8 font-medium">
-          {["Головна", "Про платформу", "Оголошення", "Допомога", "Блог"].map(
+          {["Головна", "Про платформу", "Оголошення", "Донати", "Блог"].map(
             (text, i) => {
               const routes = [
                 "/",

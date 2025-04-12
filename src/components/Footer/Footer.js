@@ -6,7 +6,12 @@ export default function Footer() {
     <footer className="bg-gray-800 text-white py-6 px-10">
       <div className="flex justify-between items-center">
         {/* Логотип або текст */}
-        <div className="text-3xl font-bold">CareBridge</div>
+        <div
+          className="text-5xl font-bold"
+          style={{ fontFamily: "Kirang Haerang, sans-serif" }}
+        >
+          CareBridge
+        </div>
 
         {/* Навігація */}
         <nav className="flex space-x-8 font-medium">
