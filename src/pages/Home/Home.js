@@ -8,6 +8,7 @@ import NewsSection from "../../components/HomePageComponents/NewsSection/NewsSec
 import FormSect from "../../components/AddAdForm/AddAdForm";
 import Carousel from "../../components/CardCarousel/CardCarousel";
 import VolunteerProfile from "../VolunteerProfile/VolunteerProfile";
+import ShelterProfile from "../ShelterProfile/ShelterProfile";
 
 AdCard({})
 const cards = [
@@ -24,13 +25,34 @@ const cards = [
 
 
 const volunteerData = {
-  name: 'Олена Ковальчук',
-  photo: '/images/volunteer-photo.jpg',
-  email: 'olena@example.com',
-  phone: '+380987654321',
-  savedAnimalsCount: 34,
+  name: 'Олена Данченко',
+  photo: '',
+  email: 'danchenkoolena07@gmail.com',
+  phone: '+380000000000',
+  savedAnimalsCount: 3,
   ads: cards,
 };
+
+const shelterData = {
+  name: "Щасливі лапки",
+  photo: '',
+  email: "shelter@gmail.com",
+  phone: '+380000000000',
+  rating: 4,
+  savedAnimalsCount: 57,
+  reviews: [
+    {
+      author: "Тарас Шевченко",
+      comment: "Який прерасний притулок! Усі тваринки чистенькі та доглянуті"
+    },
+    {
+      author: "Смялко Владислав",
+      comment: "Притулок Щасиві лапки врятував стільки котиків! Вони мої улюблені тваринки. Я взяв собі з притулку Рижика та дуже щасливий"
+    }
+  ],
+  ads: cards,
+  donations: 3600
+}
 
 const Home = () => {
   return (
@@ -41,6 +63,7 @@ const Home = () => {
       <NewsSection />
       {/* <Carousel cards={cards}/> */}
       {/* <VolunteerProfile volunteer={volunteerData}/> */}
+      {/* <ShelterProfile shelter={shelterData} /> */}
     </div>
   );
 };
