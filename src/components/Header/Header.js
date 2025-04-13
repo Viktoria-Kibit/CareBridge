@@ -22,9 +22,9 @@ export default function Header() {
         </div>
 
         <nav className="flex space-x-8 font-medium">
-          {["Головна", "Про платформу", "Оголошення", "Донати", "Блог"].map(
+          {["Головна", "Про платформу", "Оголошення", "Донати"].map(
             (text, i) => {
-              const routes = ["/", "/about", "/adverts", "/help", "/blog"];
+              const routes = ["/", "/about", "/adverts", "/donate"];
               return (
                 <Link
                   key={i}
@@ -60,7 +60,7 @@ export default function Header() {
             className="font-[Caveat] text-3xl font-bold"
             style={{ fontFamily: "Kirang Haerang, sans-serif" }}
           >
-            Pet stories
+            <Link to={"/stories"}>Pet stories</Link>
           </span>
         </div>
       </div>

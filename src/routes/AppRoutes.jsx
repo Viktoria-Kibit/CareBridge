@@ -12,6 +12,7 @@ import Login from "../pages/Login/Login";
 import ShelterProfile from "../pages/ShelterProfile/ShelterProfile";
 import VolunteerProfile from "../pages/VolunteerProfile/VolunteerProfile";
 import Donate from "../pages/Donate/Donate";
+import PetStories from "../components/PetStories/PetStories";
 
 const AppRoutes = () => (
   <BrowserRouter>
@@ -28,6 +29,7 @@ const AppRoutes = () => (
       <Route path="/shelter" element={<ShelterProfile />} />
       <Route path="/profile" element={<VolunteerProfile />} />
       <Route path="/donate" element={<Donate />} />
+      <Route path="/stories" element={<PetStories />} />
     </Routes>
     <Footer />
   </BrowserRouter>

@@ -12,7 +12,7 @@ export default function FeaturesSection() {
       title: "Знайти друга",
       text: "Ці тваринки шукають люблячу родину!",
       img: feature1,
-      link: "/search",
+      link: "/adverts",
     },
     {
       title: "Pet stories",
@@ -24,7 +24,7 @@ export default function FeaturesSection() {
       title: "У пошуках затишку",
       text: "Інші хвостики, яких потрібно врятувати!",
       img: feature3,
-      link: "/rescue",
+      link: "/adverts",
     },
   ];
 
