@@ -3,12 +3,11 @@ import { Link } from "react-router-dom";
 import { Search, User } from "lucide-react";
 import SearchDropdown from "../Search/SearchDropdown";
 import UserMenu from "../UserMenu/UserMenu";
-const user = {
+
+const fakeUser = {
   name: "Віка",
-  role: "volunteer", // або 'shelter'
-  logout: () => {
-    /* твоя функція виходу */
-  },
+  role: "volunteer", // або "shelter"
+  logout: () => alert("Вихід виконано"),
 };
 
 export default function Header() {
@@ -61,9 +60,7 @@ export default function Header() {
             )}
           </div>
 
-          {/*<User className="w-7 h-7 cursor-pointer" />*/}
-
-          <UserMenu user={user} />
+          <UserMenu />
 
           <span
             className="font-[Caveat] text-3xl font-bold"
