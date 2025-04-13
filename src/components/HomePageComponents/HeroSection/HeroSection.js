@@ -1,5 +1,6 @@
 import React from "react";
 import mainImage from "../../../assets/mainpage-font.png";
+import { Link } from "react-router-dom";
 
 export default function HeroSection() {
   return (
@@ -27,10 +28,10 @@ export default function HeroSection() {
 
         <div className="flex space-x-4">
           <button className="bg-white text-black px-4 py-2 rounded shadow hover:bg-gray-200 transition">
-            Допомога зараз
+            <Link to={"/donate"}>Допомога зараз</Link>
           </button>
           <button className="bg-orange-400 text-white px-4 py-2 rounded shadow hover:bg-orange-500 transition">
-            Додати оголошення
+            <Link to={"/register"}>Додати оголошення</Link>
           </button>
         </div>
       </div>

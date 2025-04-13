@@ -1,12 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom"; // Імпорт useNavigate
+import { Link, useNavigate } from "react-router-dom";
 import { User } from "lucide-react";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 
 export default function UserMenu() {
   const { user, logout } = useContext(AuthContext);
-  const navigate = useNavigate(); // Ініціалізація navigate
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const menuRef = useRef(null);
   const timeoutRef = useRef(null);
@@ -14,7 +14,7 @@ export default function UserMenu() {
   const toggleMenu = () => setOpen((prev) => !prev);
 
   const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => setOpen(false), 5000);
+    timeoutRef.current = setTimeout(() => setOpen(false), 2000);
   };
 
   const handleMouseEnter = () => {
@@ -23,10 +23,9 @@ export default function UserMenu() {
     }
   };
 
-  // Функція для виходу з системи та перенаправлення
   const handleLogout = () => {
-    logout(); // Викликаємо logout для очищення даних користувача
-    navigate("/"); // Перенаправляємо на головну сторінку
+    logout();
+    navigate("/");
   };
 
   const guestMenu = (
