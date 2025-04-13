@@ -1,17 +1,36 @@
 import React, { useState } from "react";
-import { FaGoogle, FaFacebook } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 function VolunteerRegister() {
+  const navigate = useNavigate();
+  const { register } = useContext(AuthContext);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [login, setLogin] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
 
   const handleSubmit = () => {
-    console.log("Email:", email);
-    console.log("Логін:", login);
-    console.log("Пароль:", password);
-    console.log("Телефон:", phoneNumber);
+    if (!email || !password || !login || !phoneNumber) {
+      alert("Будь ласка, заповніть всі поля");
+      return;
+    }
+
+    const userData = {
+      role: "volunteer",
+      email,
+      password,
+      login,
+      phoneNumber,
+    };
+
+    const isRegistered = register(userData);
+    if (isRegistered) {
+      alert("Реєстрація успішна!");
+      navigate("/login");
+    }
   };
 
   return (
@@ -20,9 +39,8 @@ function VolunteerRegister() {
         <h2 className="text-2xl font-bold mb-5 text-center">
           Реєстрація волонтера
         </h2>
-
         <label className="block text-left text-lg font-medium mb-1">
-          Адреса електронної пошти:
+          Email:
         </label>
         <input
           className="w-full p-2 mb-4 border border-gray-300 rounded-md"
@@ -30,7 +48,6 @@ function VolunteerRegister() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-
         <label className="block text-left text-lg font-medium mb-1">
           Логін:
         </label>
@@ -40,7 +57,6 @@ function VolunteerRegister() {
           value={login}
           onChange={(e) => setLogin(e.target.value)}
         />
-
         <label className="block text-left text-lg font-medium mb-1">
           Пароль:
         </label>
@@ -50,7 +66,6 @@ function VolunteerRegister() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-
         <label className="block text-left text-lg font-medium mb-1">
           Номер телефону:
         </label>
@@ -60,20 +75,12 @@ function VolunteerRegister() {
           value={phoneNumber}
           onChange={(e) => setPhoneNumber(e.target.value)}
         />
-
         <button
-          className="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 mb-4"
           onClick={handleSubmit}
+          className="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 mb-4"
         >
           Продовжити
         </button>
-
-        <div className="text-center mb-2 text-gray-600">або</div>
-
-        <div className="flex justify-center gap-4">
-          <FaGoogle className="text-2xl text-gray-700 hover:text-red-500 cursor-pointer" />
-          <FaFacebook className="text-2xl text-gray-700 hover:text-blue-600 cursor-pointer" />
-        </div>
       </div>
     </div>
   );

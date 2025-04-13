@@ -4,12 +4,6 @@ import { Search, User } from "lucide-react";
 import SearchDropdown from "../Search/SearchDropdown";
 import UserMenu from "../UserMenu/UserMenu";
 
-const fakeUser = {
-  name: "Віка",
-  role: "volunteer", // або "shelter"
-  logout: () => alert("Вихід виконано"),
-};
-
 export default function Header() {
   const [showSearch, setShowSearch] = useState(false);
 
