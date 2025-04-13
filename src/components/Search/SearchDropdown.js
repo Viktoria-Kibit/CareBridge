@@ -23,14 +23,14 @@ export default function SearchDropdown({ onClose }) {
 
   const handleApplyFilters = () => {
     console.log({ firstChoice, secondChoice, filters });
-    onClose(); // Закрити дропдаун
+    onClose();
   };
 
   const handleClearFilters = () => {
     setFirstChoice("");
     setSecondChoice("");
     setFilters({});
-    onClose(); // Закрити дропдаун
+    onClose();
   };
 
   return (

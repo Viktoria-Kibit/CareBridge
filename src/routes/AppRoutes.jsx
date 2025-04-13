@@ -11,6 +11,7 @@ import InstitutionRegister from "../pages/Register/InstitutionRegister";
 import Login from "../pages/Login/Login";
 import ShelterProfile from "../pages/ShelterProfile/ShelterProfile";
 import VolunteerProfile from "../pages/VolunteerProfile/VolunteerProfile";
+import Donate from "../pages/Donate/Donate";
 
 const AppRoutes = () => (
   <BrowserRouter>
@@ -26,6 +27,7 @@ const AppRoutes = () => (
       <Route path="/login" element={<Login />} />
       <Route path="/shelter" element={<ShelterProfile />} />
       <Route path="/profile" element={<VolunteerProfile />} />
+      <Route path="/donate" element={<Donate />} />
     </Routes>
     <Footer />
   </BrowserRouter>
