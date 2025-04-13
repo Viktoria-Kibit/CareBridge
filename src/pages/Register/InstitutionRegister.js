@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 function InstitutionRegister() {
   const navigate = useNavigate();
+  const { register } = useContext(AuthContext);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -15,8 +18,23 @@ function InstitutionRegister() {
   const [category, setCategory] = useState("");
 
   const handleSubmit = () => {
-    console.log("Дані реєстрації:");
-    console.log({
+    if (
+      !email ||
+      !password ||
+      !institution ||
+      !city ||
+      !street ||
+      !houseNumber ||
+      !contactPerson ||
+      !contactNumber ||
+      !category
+    ) {
+      alert("Будь ласка, заповніть всі поля");
+      return;
+    }
+
+    const userData = {
+      role: "institution",
       email,
       password,
       institution,
@@ -26,16 +44,21 @@ function InstitutionRegister() {
       houseNumber,
       contactPerson,
       contactNumber,
-    });
+    };
 
-    navigate("/login");
+    const isRegistered = register(userData);
+    if (isRegistered) {
+      alert("Реєстрація успішна!");
+      navigate("/login");
+    }
   };
 
   return (
     <div className="flex items-center justify-center bg-gray-50 min-h-screen py-12">
       <div className="bg-white rounded-2xl p-8 w-full max-w-4xl shadow-lg relative">
-        <h2 className="text-3xl font-bold mb-8 text-center">Реєстрація</h2>
-
+        <h2 className="text-3xl font-bold mb-8 text-center">
+          Реєстрація притулку
+        </h2>
         <div className="grid grid-cols-2 gap-6">
           <div>
             <label className="block text-lg font-medium mb-1">Email:</label>
@@ -45,7 +68,6 @@ function InstitutionRegister() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-
             <label className="block text-lg font-medium mb-1">Пароль:</label>
             <input
               className="w-full p-2 mb-4 border border-gray-300 rounded-md"
@@ -53,7 +75,6 @@ function InstitutionRegister() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-
             <label className="block text-lg font-medium mb-1">
               Назва закладу:
             </label>
@@ -63,7 +84,6 @@ function InstitutionRegister() {
               value={institution}
               onChange={(e) => setInstitution(e.target.value)}
             />
-
             <label className="block text-lg font-medium mb-1">Категорія:</label>
             <div className="flex gap-2 mb-4">
               {["Притулок", "Ветклініка", "Розплідник"].map((type) => (
@@ -80,7 +100,6 @@ function InstitutionRegister() {
                 </button>
               ))}
             </div>
-
             <label className="block text-lg font-medium mb-1">Місто:</label>
             <input
               type="text"
@@ -88,7 +107,6 @@ function InstitutionRegister() {
               value={city}
               onChange={(e) => setCity(e.target.value)}
             />
-
             <label className="block text-lg font-medium mb-1">Вулиця:</label>
             <input
               type="text"
@@ -97,7 +115,6 @@ function InstitutionRegister() {
               onChange={(e) => setStreet(e.target.value)}
             />
           </div>
-
           <div>
             <label className="block text-lg font-medium mb-1">
               Номер будинку:
@@ -108,7 +125,6 @@ function InstitutionRegister() {
               value={houseNumber}
               onChange={(e) => setHouseNumber(e.target.value)}
             />
-
             <label className="block text-lg font-medium mb-1">
               Контактна особа:
             </label>
@@ -118,7 +134,6 @@ function InstitutionRegister() {
               value={contactPerson}
               onChange={(e) => setContactPerson(e.target.value)}
             />
-
             <label className="block text-lg font-medium mb-1">
               Номер телефону:
             </label>
@@ -130,7 +145,6 @@ function InstitutionRegister() {
             />
           </div>
         </div>
-
         <div className="mt-6">
           <button
             className="w-full py-3 bg-blue-500 text-white text-lg rounded-md hover:bg-blue-600"

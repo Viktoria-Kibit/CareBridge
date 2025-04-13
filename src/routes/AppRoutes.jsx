@@ -9,6 +9,8 @@ import RegisterChoice from "../pages/Register/RegisterChoice";
 import VolunteerRegister from "../pages/Register/VolunteerRegister";
 import InstitutionRegister from "../pages/Register/InstitutionRegister";
 import Login from "../pages/Login/Login";
+import ShelterProfile from "../pages/ShelterProfile/ShelterProfile";
+import VolunteerProfile from "../pages/VolunteerProfile/VolunteerProfile";
 
 const AppRoutes = () => (
   <BrowserRouter>
@@ -22,6 +24,8 @@ const AppRoutes = () => (
       <Route path="/register/volunteer" element={<VolunteerRegister />} />
       <Route path="/register/institution" element={<InstitutionRegister />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/shelter" element={<ShelterProfile />} />
+      <Route path="/profile" element={<VolunteerProfile />} />
     </Routes>
     <Footer />
   </BrowserRouter>

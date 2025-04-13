@@ -1,23 +1,32 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // Імпорт useNavigate
 import { User } from "lucide-react";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
-export default function UserMenu({ user }) {
+export default function UserMenu() {
+  const { user, logout } = useContext(AuthContext);
+  const navigate = useNavigate(); // Ініціалізація navigate
   const [open, setOpen] = useState(false);
   const menuRef = useRef(null);
   const timeoutRef = useRef(null);
 
   const toggleMenu = () => setOpen((prev) => !prev);
 
-  // Закриваємо меню через 5 секунд, якщо мишка не наводиться
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => setOpen(false), 5000);
   };
 
   const handleMouseEnter = () => {
     if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current); // Скидаємо таймер, якщо мишка знову на меню
+      clearTimeout(timeoutRef.current);
     }
+  };
+
+  // Функція для виходу з системи та перенаправлення
+  const handleLogout = () => {
+    logout(); // Викликаємо logout для очищення даних користувача
+    navigate("/"); // Перенаправляємо на головну сторінку
   };
 
   const guestMenu = (
@@ -89,7 +98,7 @@ export default function UserMenu({ user }) {
         >
           Редагування профілю
         </Link>
-        <button className="text-left text-red-600" onClick={user?.logout}>
+        <button className="text-left text-red-600" onClick={handleLogout}>
           Вийти
         </button>
       </nav>
@@ -126,7 +135,7 @@ export default function UserMenu({ user }) {
         >
           Редагування профілю
         </Link>
-        <button className="text-left text-red-600" onClick={user?.logout}>
+        <button className="text-left text-red-600" onClick={handleLogout}>
           Вийти
         </button>
       </nav>
@@ -139,9 +148,8 @@ export default function UserMenu({ user }) {
         onClick={toggleMenu}
         className="hover:scale-110 transition-transform duration-200"
       >
-        <User className="w-7 h-7 cursor-pointer" />
+        <User />
       </button>
-
       {open &&
         (user
           ? user.role === "volunteer"
