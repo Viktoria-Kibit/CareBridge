@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 
 import HeroSection from "../../components/HomePageComponents/HeroSection/HeroSection";
@@ -18,4 +17,3 @@ const Home = () => {
 };
 
 export default Home;
-
