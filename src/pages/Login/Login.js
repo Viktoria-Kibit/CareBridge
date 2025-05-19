@@ -1,34 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 
 function Login() {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
+  const [loginInput, setLoginInput] = useState("");
   const [password, setPassword] = useState("");
   const { login } = useContext(AuthContext);
 
   const handleLogin = () => {
-    if (!email || !password) {
-      alert("Будь ласка, введіть email та пароль");
+    if (!loginInput || !password) {
+      alert("Будь ласка, введіть логін та пароль");
       return;
     }
 
-    const users = JSON.parse(localStorage.getItem("users")) || [];
-    const user = users.find(
-      (u) => u.email === email && u.password === password
-    );
-    if (!user) {
-      alert("Неправильний email або пароль");
-      return;
-    }
+    const success = login(loginInput, password);
 
-    login(user);
-    if (user.role === "institution") {
-      navigate("/shelter");
-    } else if (user.role === "volunteer") {
-      navigate("/profile");
+    if (success) {
+      const currentUser = JSON.parse(localStorage.getItem("user"));
+      if (currentUser.role === "institution") {
+        navigate("/shelter");
+      } else if (currentUser.role === "volunteer") {
+        navigate("/profile");
+      } else {
+        navigate("/"); // fallback
+      }
     }
   };
 
@@ -36,12 +32,12 @@ function Login() {
     <div className="flex items-center justify-center bg-gray-50 min-h-screen py-12">
       <div className="bg-white rounded-2xl p-8 w-full max-w-md shadow-lg">
         <h2 className="text-3xl font-bold mb-8 text-center">Вхід</h2>
-        <label className="block text-lg font-medium mb-1">Email:</label>
+        <label className="block text-lg font-medium mb-1">Логін:</label>
         <input
           className="w-full p-2 mb-4 border border-gray-300 rounded-md"
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          type="text"
+          value={loginInput}
+          onChange={(e) => setLoginInput(e.target.value)}
         />
         <label className="block text-lg font-medium mb-1">Пароль:</label>
         <input

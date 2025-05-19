@@ -13,30 +13,48 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const register = (userData) => {
-    const users = JSON.parse(localStorage.getItem("users")) || [];
-    const isUserExists = users.some((u) => u.email === userData.email);
-    if (isUserExists) {
-      alert("Користувач з таким email вже існує");
+    const { login, password } = userData;
+
+    const safeLogin = String(login).trim();
+    const safePassword = String(password).trim();
+
+    if (!safeLogin || !safePassword) {
+      alert("Будь ласка, заповніть усі поля");
       return false;
     }
-    users.push(userData);
+
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const isUserExists = users.some((u) => u.login === safeLogin);
+    if (isUserExists) {
+      alert("Користувач з таким логіном вже існує");
+      return false;
+    }
+
+    const newUser = { login: safeLogin, password: safePassword };
+    users.push(newUser);
     localStorage.setItem("users", JSON.stringify(users));
-    setUser(userData);
-    localStorage.setItem("user", JSON.stringify(userData));
+    localStorage.setItem("user", JSON.stringify(newUser));
+    setUser(newUser);
     return true;
   };
 
-  const login = (email, password) => {
+  const login = (loginInput, passwordInput) => {
+    const safeLogin = String(loginInput).trim();
+    const safePassword = String(passwordInput).trim();
+
     const users = JSON.parse(localStorage.getItem("users")) || [];
-    const user = users.find(
-      (u) => u.email === email && u.password === password
+    const foundUser = users.find(
+      (u) => u.login === safeLogin && u.password === safePassword
     );
-    if (!user) {
-      alert("Неправильний email або пароль");
-      return;
+
+    if (!foundUser) {
+      alert("Неправильний логін або пароль");
+      return false;
     }
-    setUser(user);
-    localStorage.setItem("user", JSON.stringify(user));
+
+    setUser(foundUser);
+    localStorage.setItem("user", JSON.stringify(foundUser));
+    return true;
   };
 
   const logout = () => {
